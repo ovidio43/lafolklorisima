@@ -1,4 +1,60 @@
 <?php get_header();?>
+
+<div class="wrapper">
+  <div class="row article">
+  <?php
+  $args=array(
+    'post_type' => "fotos",
+    'post_status' => 'publish',
+    'orderby' => 'date',
+    'order' => 'DESC',
+    'posts_per_page'=>2);                 
+  $myposts = new WP_Query( $args );  
+  if ( $myposts->have_posts() ) :
+    while ( $myposts->have_posts() ) : $myposts->the_post(); ?>
+      <div class="col-md-3 entry-thumbnail">
+          <?php 
+           if ( has_post_thumbnail()) { ?>
+           <a href="<?php the_permalink();?>">
+           <?php
+             echo get_the_post_thumbnail($post->ID, 'crop_thumbnail'); ?>
+             <span class="icon-"></span>
+             </a>
+           <?php }
+          ?>
+          <h2 class="entry-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+      </div>      
+    <?php endwhile;
+  endif;
+  ?>
+  <?php
+  $args=array(
+    'post_type' => "videos",
+    'post_status' => 'publish',
+    'orderby' => 'date',
+    'order' => 'DESC',
+    'posts_per_page'=>2);                 
+  $myposts = new WP_Query( $args );  
+  if ( $myposts->have_posts() ) :
+    while ( $myposts->have_posts() ) : $myposts->the_post(); ?>
+      <div class="col-md-3 entry-thumbnail">
+          <?php 
+           if ( has_post_thumbnail()) { ?>
+           <a href="<?php the_permalink();?>">
+           <?php
+             echo get_the_post_thumbnail($post->ID, 'crop_thumbnail'); ?>
+             <span class="icon-"></span>
+             </a>
+           <?php }
+          ?>
+          <h2 class="entry-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+      </div>      
+    <?php endwhile;
+  endif;
+  ?>  
+  </div>
+</div>
+
 <?php
 $args=array(
     'post_type' => $type,
@@ -44,12 +100,12 @@ $args=array(
   if ( $myposts->have_posts() ) :
     while ( $myposts->have_posts() ) : $myposts->the_post(); ?>
       <div class="col-md-4 entry-thumbnail">
-
           <?php 
            if ( has_post_thumbnail()) { ?>
            <a href="<?php the_permalink();?>">
            <?php
              echo get_the_post_thumbnail($post->ID, 'crop_thumbnail'); ?>
+             <span class="icon-"></span>
              </a>
            <?php }
           ?>

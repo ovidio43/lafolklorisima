@@ -1,5 +1,5 @@
 <?php
-
+require_once(get_template_directory() . '/library/post-type.php');
 register_nav_menu( 'primary', __( 'Primary Menu', 'folkTheme' ) );
 add_theme_support( 'post-thumbnails' );
 
