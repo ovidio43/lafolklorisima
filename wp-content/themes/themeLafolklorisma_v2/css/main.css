@@ -20,6 +20,30 @@ h2 {
   margin: 0 auto;
   clear: both;
 }
+.icon-fotos {
+  background-image: url('../img/more_photos.png');
+  width: 80px;
+  height: 80px;
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(@value)";
+}
+.icon-videos {
+  background-image: url('../img/miniplayer.png');
+  width: 80px;
+  height: 80px;
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(@value)";
+}
+.icon-video {
+  background-image: url('../img/miniplayer.png');
+  width: 80px;
+  height: 80px;
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(@value)";
+}
 header {
   width: 100%;
   float: left;
@@ -39,9 +63,35 @@ header .logo {
   color: #fff;
   margin: 0 0 40px 0;
 }
+.wrap-featured .entry_content {
+  color: #fff;
+}
+.wrap-featured .entry_image {
+  color: #fff;
+}
 .wrap-featured .entry_image img {
   width: 100%;
   height: auto;
+}
+.wrap-featured .entry_image .more_videos {
+  width: 100%;
+}
+.wrap-featured .entry_image .more_videos ul {
+  margin: 0;
+  padding: 0;
+}
+.wrap-featured .entry_image .more_videos ul li {
+  list-style: none;
+  width: 20%;
+  float: left;
+}
+.wrap-featured .entry_image .more_videos ul li a {
+  color: #fff;
+  display: block;
+  margin: 5px;
+}
+.wrap-featured .entry-title {
+  color: #fff;
 }
 .wrap-featured .entry-title a {
   color: #fff;
@@ -53,6 +103,35 @@ header .logo {
 .article .entry-thumbnail img {
   width: 100%;
   height: auto;
+}
+.article .entry-thumbnail a {
+  display: block;
+  position: relative;
+}
+.article .entry-thumbnail .icon-videos,
+.article .entry-thumbnail .icon-video {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  margin: auto;
+}
+.article .entry-thumbnail:hover img {
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(@value)";
+}
+.article .entry-thumbnail:hover .icon-videos {
+  -moz-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(@value)";
+}
+.article .entry-thumbnail:hover .icon-fotos {
+  -moz-opacity: 1;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(@value)";
 }
 /** navigatoin */
 .canales-referencia a {
