@@ -16,7 +16,7 @@
                 $data[$i]['type'] = "post";
                 $i++;
             }
-            /*foreach ($tumblr as $tp) {
+            foreach ($tumblr as $tp) {
                 if($tp['photo']!=""){
                     $data[$i]['title'] = content(8, strip_tags($tp['caption']));
                     $data[$i]['date'] = $tp['created'];
@@ -26,17 +26,17 @@
                     $data[$i]['type'] = 'thumblr';
                     $i++;                    
                 }
-            }*/
+            }
             return $data;
         }
 
         $query = new WP_Query(array('post_type' => 'post'));
         $posts = $query->get_posts();
 
-        $key = "pJmj9fuKfcf5nnpNIf1XhiJvYonbaZijHmMo8Nsy0ibe0gqtcS";
-        $ak_tumblr = new ProdTumblr($post->ID, "thekeysofalicia.tumblr.com", $key, 16);
+        //$key = "pJmj9fuKfcf5nnpNIf1XhiJvYonbaZijHmMo8Nsy0ibe0gqtcS";
+        //$ak_tumblr = new ProdTumblr($post->ID, "thekeysofalicia.tumblr.com", $key, 1);
 //        $tumblr_posts = $ak_tumblr->get_data();
-        $tumblr_posts = $ak_tumblr->get_feed();
+        //$tumblr_posts = $ak_tumblr->get_feed();
         $count = count(newsData($posts, $tumblr_posts));
         $data = newsData($posts, $tumblr_posts);
 
