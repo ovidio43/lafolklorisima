@@ -2,13 +2,17 @@
 
 <div class="wrapper">
   <div class="row article">
+      <div class="col-md-3 entry-thumbnail">
+        <img src="<?php echo get_template_directory_uri(); ?>/img/radio-meteoro.jpg">
+          <h2 class="entry-title"><a>"Sabor a mi tierra" 101.2 Radio Meteoro</a></h2>
+      </div>    
   <?php
   $args=array(
     'post_type' => "fotos",
     'post_status' => 'publish',
     'orderby' => 'date',
     'order' => 'DESC',
-    'posts_per_page'=>2);                 
+    'posts_per_page'=>1);                 
   $myposts = new WP_Query( $args );  
   if ( $myposts->have_posts() ) :
     while ( $myposts->have_posts() ) : $myposts->the_post(); ?>
