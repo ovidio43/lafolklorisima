@@ -1,0 +1,337 @@
+ /*  
+ 
+ RoyalSlider
+ 
+ */
+.royalSlider {	
+	position:relative;
+	/* set width and height of slider here, in px, % or em*/
+	width:100%;
+	height:900px;
+	/* Used to prevent content "jumping" on page load. this property is removed when javascript is loaded and slider is instanciated */
+	overflow:hidden;
+}
+#record-slider  {
+	width:275px;
+	overflow:visible;
+	margin:0 auto;
+	height:300px;
+	top:150px;
+	
+}
+/**
+*  Slides area (set background here)
+*/
+
+.royalSlider .royalWrapper {
+	overflow:hidden;	
+	position:relative;
+	margin:0 auto;
+	width:100%; 
+	height:750px;
+}
+#record-slider.royalSlider .royalWrapper {
+	overflow:visible;
+	width:500px;
+	height:300px;
+}
+
+
+/* slides holder, grabbing container */
+.royalSlider .royalSlidesContainer {
+	position: relative;
+	left: 0;
+	top: 0px;	
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+/* slide item */
+.royalSlider .royalSlide {
+	padding:0;
+	margin:0;	
+	position:relative;
+	float:left;	
+	overflow:hidden;
+	width:100%;
+}
+.royalSlider .royalSlide.current-slide {
+	overflow:visible;
+}
+
+/* 
+
+	Direction Navigation (arrows) 
+
+*/
+.royalSlider .arrow
+{	
+	background: url(../images/sprites/gallery_sprite.png) no-repeat 0 -44px;
+	
+
+	/* change arrows size here */
+	height: 54px;
+	width: 37px;
+	
+	top:38%;
+	margin-top:-45px;	
+	
+	cursor: pointer;
+	display: block;
+	position: absolute;		
+	z-index:75;
+	
+}
+.royalSlider .arrow:hover {
+	
+}
+.royalSlider .arrow.disabled {
+	display:none!important;
+}
+/* left arrow */
+.royalSlider .arrow.left {
+	
+	left: 20px;	
+}
+#record-slider.royalSlider .arrow.left {
+	left: -110px;	
+}
+/* right arrow */
+.royalSlider .arrow.right {
+	background-position:0 -107px;
+	right: 40px;
+}
+
+#record-slider.royalSlider .arrow.right {
+	right:-85px;
+}
+
+
+/* Control navigation container (bullets or thumbs) */
+.royalSlider .royalControlNavOverflow {
+	width:100%;
+	overflow:hidden;
+	position:absolute;
+	margin-top:-20px;
+	z-index:25;
+}
+/* This container is inside ".royalControlNavContainer"  
+   and is used for auto horizontal centering */
+.royalSlider .royalControlNavCenterer {	
+	float: left;
+	position: relative;
+	left: -50%;
+}
+/* Control navigation container*/ 
+.royalSlider .royalControlNavContainer {
+	float: left;
+	position: relative;
+	left: 50%;	
+}
+
+
+/* Scrollable thumbnails containers */
+.royalSlider .royalControlNavThumbsContainer {		
+	left:0;
+	position:relative;
+	margin:0 auto;
+}
+.royalSlider .thumbsAndArrowsContainer {
+	overflow:hidden;
+	width: 100%;
+	position: relative;
+}
+.royalSlider .royalControlNavOverflow.royalThumbs {	
+	width: auto;
+	position: relative;
+	overflow: hidden;
+	margin-top:4px;	
+}
+
+
+
+
+
+
+/* 
+
+	Control navigation (bullets, thumbnails)
+	
+*/
+.royalSlider .royalControlNavOverflow a{	
+	background:transparent none no-repeat scroll 0 0;
+	
+	width:20px;
+	height:20px;	
+	
+	float:left;	
+	cursor:pointer;	
+	
+	position:relative;
+	display:block;
+	
+	text-indent: -9999px;	
+}
+/* Current control navigation item */
+.royalSlider .royalControlNavOverflow a.current {	
+
+}
+/* Hover state navigation item */
+.royalSlider .royalControlNavOverflow a:hover {	
+
+}
+
+/* Thumbnails */
+.royalSlider .royalControlNavOverflow a.royalThumb{	
+	/*background: none no-repeat 0 0;*/
+	/*background-color: ;*/
+	border:1px solid #fff;
+	width:50px;
+	height:50px;	
+	/* thumbnails spacing, use margin-right only */	
+	margin-right:4px;
+	opacity:.4;
+}
+.royalSlider .royalControlNavOverflow a.royalThumb.current {	
+	opacity:1;
+}
+.royalSlider .royalControlNavOverflow a.royalThumb:hover {	
+	opacity:1
+}
+
+
+
+/* 
+
+	Thumbnails navigation arrows 
+	
+*/
+.royalSlider .thumbsArrow {		
+	cursor: pointer;
+	display: block;
+	position: relative;		
+	z-index: 25;
+	background-size:50%;
+	height: 18px;
+	width: 25px;
+	background: url(../images/sprites/gallery_sprite.png) no-repeat 0 -30px;
+	top:20px;
+}
+.royalSlider .thumbsArrow.left {	
+	float: left;
+	background-position:0 -11px;
+	left:20px;
+}
+.royalSlider .thumbsArrow.right {	
+	float: right;
+	right:20px
+
+}
+.royalSlider .thumbsArrow:hover  {
+	
+}
+.royalSlider .thumbsArrow.disabled {
+	
+}
+
+
+
+
+
+
+/* Captions container */
+.royalSlide .royalCaption {
+	z-index: 20;
+	position: absolute;
+	left: 0;
+	top: 0px;
+	width: 100%;
+	margin: 0 auto;
+	overflow: visible;
+	height: 100%;
+}
+/* Caption item */
+.royalSlide .royalCaptionItem {
+	margin: 0;
+	padding: 0;
+	color: white;
+	left:18%;
+	width: 635px;
+	position: absolute;
+	top: 685px;
+}
+.royalSlide .royalCaption .share-links {
+	/*clear: none;
+	float: left;
+	width: 225px;*/
+}
+
+
+/* Loading (welcome) screen */
+.royalSlider .royalLoadingScreen {
+	background:#FFF;
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index:99;	
+}
+/* Loading screen text ("Loading...") */
+.royalSlider .royalLoadingScreen p {		
+	width:100%;
+	position:absolute;	
+	margin:0 auto;
+	top: 45%;
+	text-align:center;
+}
+
+/* single slide image preloader */
+.royalSlider .royalPreloader {	
+	position:absolute;
+	width:24px;
+	height:24px;
+	left:50%;
+	top:50%;
+	margin-left:-12px;
+	margin-top:-12px;	
+	z-index:0;	
+	background-image:url(../images/preloader.gif);
+}
+
+
+
+.royalSlider .grab-cursor{cursor:move;}
+.royalSlider .grab-cursor{cursor:url("../images/cursors/grab.png") 8 8,-moz-grab;}
+.royalSlider .grab-cursor{*cursor:url(../images/cursors/grab.cur);}
+.royalSlider .grab-cursor{cursor:move\0/;} /* ie8 hack */
+
+.royalSlider .grabbing-cursor{cursor:move;}
+.royalSlider .grabbing-cursor{cursor:url("../images/cursors/grabbing.png") 8 8,-moz-grabbing;}
+.royalSlider .grabbing-cursor{*cursor:url(../images/cursors/grabbing.cur);}
+
+
+/* Cursor used if mouse dragging is disabled */
+.royalSlider .auto-cursor{cursor:auto;}
+
+.royalSlider .royalHtmlContent {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.royalSlider .non-draggable {
+	cursor: auto;
+}
+.royalSlider .fade-container .royalSlide{
+	position: absolute;
+	left: 0;
+	top: 0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	z-index: 10;
+}
+.royalSlider .royalImage {
+	max-width:none;
+	max-height: 646px;
+	margin:0;	
+}
